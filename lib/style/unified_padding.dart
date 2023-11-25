@@ -5,7 +5,17 @@ class UnifiedPadding {
   static const EdgeInsets horizontalLg = EdgeInsets.symmetric(
     horizontal: lgSize,
   );
+
   static const EdgeInsets horizontalMd = EdgeInsets.symmetric(
     horizontal: mdSize,
+  );
+
+  static const EdgeInsets verticalMd = EdgeInsets.symmetric(
+    vertical: mdSize,
+  );
+
+  static const EdgeInsets allMd = EdgeInsets.symmetric(
+    horizontal: mdSize,
+    vertical: mdSize,
   );
 }
