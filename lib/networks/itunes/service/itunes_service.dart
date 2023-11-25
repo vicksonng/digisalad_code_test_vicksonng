@@ -1,4 +1,4 @@
-import 'package:digisalad_code_test_vicksonng/constants/config.dart';
+import 'package:digisalad_code_test_vicksonng/config/constants.dart';
 import 'package:digisalad_code_test_vicksonng/networks/itunes/dtos/itunes_response_dto/itunes_response_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
