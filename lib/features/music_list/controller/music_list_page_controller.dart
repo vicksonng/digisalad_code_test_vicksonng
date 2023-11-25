@@ -7,14 +7,20 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 class MusicListPageController extends GetxController {
   final ItunesRespository musicRepository;
+  MusicListPageController({required this.musicRepository});
+
   final PagingController<int, Music> pagingController =
       PagingController<int, Music>(firstPageKey: 0);
-
-  MusicListPageController({required this.musicRepository});
 
   final RxString _keyword = ''.obs;
   String get keyword => _keyword.value;
   set keyword(String value) => _keyword.value = value;
+
+  @override
+  void onClose() {
+    pagingController.dispose();
+    super.onClose();
+  }
 
   void searchMusics(String newKeyword) {
     keyword = newKeyword;
