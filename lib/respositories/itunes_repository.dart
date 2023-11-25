@@ -1,3 +1,4 @@
+import 'package:digisalad_code_test_vicksonng/config/constants.dart';
 import 'package:digisalad_code_test_vicksonng/models/music.dart';
 import 'package:digisalad_code_test_vicksonng/networks/http_client.dart';
 import 'package:digisalad_code_test_vicksonng/networks/itunes/dtos/itunes_response_dto/itunes_response_dto.dart';
@@ -9,16 +10,16 @@ class ItunesRespository {
     GetIt.I<ItunesHttpClient>().instance,
   );
 
-  Future<List<Music>> search({
+  Future<List<Music>> searchMusic({
     required String term,
-    String? media,
     int? limit,
     int? offset,
   }) async {
     final ItunesResponseDto _dto = await _itunesService.search(
       term: term,
-      media: media,
-      limit: limit,
+      limit: searchLimit,
+      media: searchMusicMedia,
+      entity: searchMusicEntity,
       offset: offset,
     );
 

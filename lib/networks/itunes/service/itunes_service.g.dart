@@ -23,9 +23,9 @@ class _ITunesService implements ITunesService {
   @override
   Future<ItunesResponseDto> search({
     required String term,
-    String? media = searchMedia,
-    int? limit = searchLimit,
-    String? entity = searchEntity,
+    String? media,
+    int? limit,
+    String? entity,
     int? offset,
   }) async {
     const _extra = <String, dynamic>{};

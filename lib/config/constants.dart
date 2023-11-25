@@ -1,3 +1,3 @@
-const int searchLimit = 15;
-const String searchEntity = 'song';
-const String searchMedia = 'music';
+const int searchLimit = 10;
+const String searchMusicEntity = 'song';
+const String searchMusicMedia = 'music';

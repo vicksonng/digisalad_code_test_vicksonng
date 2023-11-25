@@ -1,4 +1,3 @@
-import 'package:digisalad_code_test_vicksonng/config/constants.dart';
 import 'package:digisalad_code_test_vicksonng/networks/itunes/dtos/itunes_response_dto/itunes_response_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
@@ -12,9 +11,9 @@ abstract class ITunesService {
   @GET('/search')
   Future<ItunesResponseDto> search({
     @Query('term', encoded: true) required String term,
-    @Query('media') String? media = searchMedia,
-    @Query('limit') int? limit = searchLimit,
-    @Query('entity') String? entity = searchEntity,
+    @Query('media') String? media,
+    @Query('limit') int? limit,
+    @Query('entity') String? entity,
     @Query('offset') int? offset,
   });
 }
