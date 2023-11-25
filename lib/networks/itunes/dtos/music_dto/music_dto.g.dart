@@ -12,6 +12,7 @@ _$MusicDTOImpl _$$MusicDTOImplFromJson(Map<String, dynamic> json) =>
       collectionName: json['collectionName'] as String?,
       trackName: json['trackName'] as String?,
       artworkUrl100: json['artworkUrl100'] as String?,
+      trackId: json['trackId'] as int,
       previewUrl: json['previewUrl'] as String,
     );
 
@@ -21,5 +22,6 @@ Map<String, dynamic> _$$MusicDTOImplToJson(_$MusicDTOImpl instance) =>
       'collectionName': instance.collectionName,
       'trackName': instance.trackName,
       'artworkUrl100': instance.artworkUrl100,
+      'trackId': instance.trackId,
       'previewUrl': instance.previewUrl,
     };

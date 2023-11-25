@@ -10,6 +10,7 @@ class MusicDTO with _$MusicDTO {
     String? collectionName,
     String? trackName,
     String? artworkUrl100,
+    required int trackId,
     required String previewUrl,
   }) = _MusicDTO;
 

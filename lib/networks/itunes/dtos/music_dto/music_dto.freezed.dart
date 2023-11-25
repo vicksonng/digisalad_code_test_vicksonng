@@ -24,6 +24,7 @@ mixin _$MusicDTO {
   String? get collectionName => throw _privateConstructorUsedError;
   String? get trackName => throw _privateConstructorUsedError;
   String? get artworkUrl100 => throw _privateConstructorUsedError;
+  int get trackId => throw _privateConstructorUsedError;
   String get previewUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,6 +43,7 @@ abstract class $MusicDTOCopyWith<$Res> {
       String? collectionName,
       String? trackName,
       String? artworkUrl100,
+      int trackId,
       String previewUrl});
 }
 
@@ -62,6 +64,7 @@ class _$MusicDTOCopyWithImpl<$Res, $Val extends MusicDTO>
     Object? collectionName = freezed,
     Object? trackName = freezed,
     Object? artworkUrl100 = freezed,
+    Object? trackId = null,
     Object? previewUrl = null,
   }) {
     return _then(_value.copyWith(
@@ -81,6 +84,10 @@ class _$MusicDTOCopyWithImpl<$Res, $Val extends MusicDTO>
           ? _value.artworkUrl100
           : artworkUrl100 // ignore: cast_nullable_to_non_nullable
               as String?,
+      trackId: null == trackId
+          ? _value.trackId
+          : trackId // ignore: cast_nullable_to_non_nullable
+              as int,
       previewUrl: null == previewUrl
           ? _value.previewUrl
           : previewUrl // ignore: cast_nullable_to_non_nullable
@@ -102,6 +109,7 @@ abstract class _$$MusicDTOImplCopyWith<$Res>
       String? collectionName,
       String? trackName,
       String? artworkUrl100,
+      int trackId,
       String previewUrl});
 }
 
@@ -120,6 +128,7 @@ class __$$MusicDTOImplCopyWithImpl<$Res>
     Object? collectionName = freezed,
     Object? trackName = freezed,
     Object? artworkUrl100 = freezed,
+    Object? trackId = null,
     Object? previewUrl = null,
   }) {
     return _then(_$MusicDTOImpl(
@@ -139,6 +148,10 @@ class __$$MusicDTOImplCopyWithImpl<$Res>
           ? _value.artworkUrl100
           : artworkUrl100 // ignore: cast_nullable_to_non_nullable
               as String?,
+      trackId: null == trackId
+          ? _value.trackId
+          : trackId // ignore: cast_nullable_to_non_nullable
+              as int,
       previewUrl: null == previewUrl
           ? _value.previewUrl
           : previewUrl // ignore: cast_nullable_to_non_nullable
@@ -155,6 +168,7 @@ class _$MusicDTOImpl implements _MusicDTO {
       this.collectionName,
       this.trackName,
       this.artworkUrl100,
+      required this.trackId,
       required this.previewUrl});
 
   factory _$MusicDTOImpl.fromJson(Map<String, dynamic> json) =>
@@ -169,11 +183,13 @@ class _$MusicDTOImpl implements _MusicDTO {
   @override
   final String? artworkUrl100;
   @override
+  final int trackId;
+  @override
   final String previewUrl;
 
   @override
   String toString() {
-    return 'MusicDTO(artistName: $artistName, collectionName: $collectionName, trackName: $trackName, artworkUrl100: $artworkUrl100, previewUrl: $previewUrl)';
+    return 'MusicDTO(artistName: $artistName, collectionName: $collectionName, trackName: $trackName, artworkUrl100: $artworkUrl100, trackId: $trackId, previewUrl: $previewUrl)';
   }
 
   @override
@@ -189,6 +205,7 @@ class _$MusicDTOImpl implements _MusicDTO {
                 other.trackName == trackName) &&
             (identical(other.artworkUrl100, artworkUrl100) ||
                 other.artworkUrl100 == artworkUrl100) &&
+            (identical(other.trackId, trackId) || other.trackId == trackId) &&
             (identical(other.previewUrl, previewUrl) ||
                 other.previewUrl == previewUrl));
   }
@@ -196,7 +213,7 @@ class _$MusicDTOImpl implements _MusicDTO {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, artistName, collectionName,
-      trackName, artworkUrl100, previewUrl);
+      trackName, artworkUrl100, trackId, previewUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -218,6 +235,7 @@ abstract class _MusicDTO implements MusicDTO {
       final String? collectionName,
       final String? trackName,
       final String? artworkUrl100,
+      required final int trackId,
       required final String previewUrl}) = _$MusicDTOImpl;
 
   factory _MusicDTO.fromJson(Map<String, dynamic> json) =
@@ -231,6 +249,8 @@ abstract class _MusicDTO implements MusicDTO {
   String? get trackName;
   @override
   String? get artworkUrl100;
+  @override
+  int get trackId;
   @override
   String get previewUrl;
   @override
