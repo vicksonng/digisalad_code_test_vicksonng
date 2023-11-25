@@ -1,4 +1,4 @@
-import 'package:digisalad_code_test_vicksonng/models/Music.dart';
+import 'package:digisalad_code_test_vicksonng/models/music.dart';
 import 'package:digisalad_code_test_vicksonng/networks/http_client.dart';
 import 'package:digisalad_code_test_vicksonng/networks/itunes/dtos/itunes_response_dto/itunes_response_dto.dart';
 import 'package:digisalad_code_test_vicksonng/networks/itunes/service/itunes_service.dart';
