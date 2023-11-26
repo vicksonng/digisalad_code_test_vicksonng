@@ -1,7 +1,6 @@
 import 'package:digisalad_code_test_vicksonng/injections.dart';
-import 'package:digisalad_code_test_vicksonng/routes/routes.dart';
-import 'package:digisalad_code_test_vicksonng/features/music_list/view/music_list_page.dart';
-import 'package:digisalad_code_test_vicksonng/features/music_list/binding/music_list_page_binding.dart';
+import 'package:digisalad_code_test_vicksonng/routes/app_pages.dart';
+import 'package:digisalad_code_test_vicksonng/routes/app_routes.dart';
 import 'package:digisalad_code_test_vicksonng/style/unified_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,10 +20,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Widget _getApp() {
+  @override
+  Widget build(BuildContext context) {
   return GetMaterialApp(
-    getPages: Routes.getPages,
-    initialBinding: MusicListPageBinding(),
+      getPages: AppPages.getPages,
     theme: ThemeData.from(
       colorScheme: ColorScheme.fromSeed(
         seedColor: const Color(
@@ -32,6 +31,7 @@ Widget _getApp() {
         ),
       ),
     ),
-    home: const MusicListPage(),
+      initialRoute: AppRoutes.root,
   );
+  }
 }
