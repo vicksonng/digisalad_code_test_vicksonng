@@ -21,33 +21,29 @@ class _ITunesService implements ITunesService {
   String? baseUrl;
 
   @override
-  Future<ItunesResponseDto> search({
+  Future<ItunesMusicResDto> searchMusic({
     required String term,
-    String? media,
     int? limit,
-    String? entity,
     int? offset,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'term': term,
-      r'media': media,
       r'limit': limit,
-      r'entity': entity,
       r'offset': offset,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<ItunesResponseDto>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<ItunesMusicResDto>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/search',
+              '/search?media=music&entity=song',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -56,7 +52,7 @@ class _ITunesService implements ITunesService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ItunesResponseDto.fromJson(_result.data!);
+    final value = ItunesMusicResDto.fromJson(_result.data!);
     return value;
   }
 
