@@ -2,7 +2,7 @@ import 'package:digisalad_code_test_vicksonng/features/audio_player/controller/a
 import 'package:digisalad_code_test_vicksonng/injections.dart';
 import 'package:digisalad_code_test_vicksonng/routes/app_pages.dart';
 import 'package:digisalad_code_test_vicksonng/routes/app_routes.dart';
-import 'package:digisalad_code_test_vicksonng/style/unified_color.dart';
+import 'package:digisalad_code_test_vicksonng/styles/unified_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';

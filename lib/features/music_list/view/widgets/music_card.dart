@@ -5,15 +5,18 @@ import 'package:flutter/material.dart';
 
 class MusicCard extends StatelessWidget {
   final Music music;
+  final VoidCallback onTap;
 
   const MusicCard({
     super.key,
     required this.music,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onTap,
       style: ListTileStyle.drawer,
       leading: _leading(),
       title: _title(),

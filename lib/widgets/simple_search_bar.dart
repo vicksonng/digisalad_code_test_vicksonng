@@ -1,5 +1,5 @@
 import 'package:digisalad_code_test_vicksonng/config/messages.dart';
-import 'package:digisalad_code_test_vicksonng/style/unified_padding.dart';
+import 'package:digisalad_code_test_vicksonng/styles/unified_padding.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
 import 'package:flutter/material.dart';
 
