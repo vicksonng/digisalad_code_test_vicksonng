@@ -21,6 +21,7 @@ dependencies:
   injectable: ^2.3.2
   json_annotation: ^4.8.1
 
+  just_audio: ^0.9.36
   logger: ^2.0.2+1
   retrofit: ^4.0.3
 
