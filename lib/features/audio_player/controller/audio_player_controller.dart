@@ -47,11 +47,12 @@ class AudioPlayerController extends GetxController {
 
   void play(Music music) async {
     try {
+      playingTrackId = music.id;
       await _player.setUrl(music.previewUrl);
       _player.play();
-      playingTrackId = music.id;
     } catch (e) {
       GetIt.I<Logger>().e(e.toString());
+      playingTrackId = null;
       showErrorDialog(e.toString());
     }
   }
