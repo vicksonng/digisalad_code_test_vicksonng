@@ -7,10 +7,10 @@ part 'music_dto.g.dart';
 class MusicDTO with _$MusicDTO {
   const factory MusicDTO({
     required int trackId,
-    required String previewUrl,
     required String artistName,
-    required String? collectionName,
-    required String? trackName,
+    required String collectionName,
+    required String trackName,
+    required String previewUrl,
     String? artworkUrl100,
     String? artworkUrl30,
   }) = _MusicDTO;
