@@ -6,12 +6,13 @@ part 'music_dto.g.dart';
 @freezed
 class MusicDTO with _$MusicDTO {
   const factory MusicDTO({
-    String? artistName,
-    String? collectionName,
-    String? trackName,
-    String? artworkUrl100,
     required int trackId,
     required String previewUrl,
+    required String artistName,
+    required String? collectionName,
+    required String? trackName,
+    String? artworkUrl100,
+    String? artworkUrl30,
   }) = _MusicDTO;
 
   factory MusicDTO.fromJson(Map<String, dynamic> json) =>

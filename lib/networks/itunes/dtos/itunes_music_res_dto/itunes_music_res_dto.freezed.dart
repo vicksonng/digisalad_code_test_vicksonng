@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'itunes_response_dto.dart';
+part of 'itunes_music_res_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,34 +14,34 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ItunesResponseDto _$ItunesResponseDtoFromJson(Map<String, dynamic> json) {
-  return _ItunesResponseDto.fromJson(json);
+ItunesMusicResDto _$ItunesMusicResDtoFromJson(Map<String, dynamic> json) {
+  return _ItunesMusicResDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ItunesResponseDto {
+mixin _$ItunesMusicResDto {
   int get resultCount => throw _privateConstructorUsedError;
   List<MusicDTO> get results => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ItunesResponseDtoCopyWith<ItunesResponseDto> get copyWith =>
+  $ItunesMusicResDtoCopyWith<ItunesMusicResDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ItunesResponseDtoCopyWith<$Res> {
-  factory $ItunesResponseDtoCopyWith(
-          ItunesResponseDto value, $Res Function(ItunesResponseDto) then) =
-      _$ItunesResponseDtoCopyWithImpl<$Res, ItunesResponseDto>;
+abstract class $ItunesMusicResDtoCopyWith<$Res> {
+  factory $ItunesMusicResDtoCopyWith(
+          ItunesMusicResDto value, $Res Function(ItunesMusicResDto) then) =
+      _$ItunesMusicResDtoCopyWithImpl<$Res, ItunesMusicResDto>;
   @useResult
   $Res call({int resultCount, List<MusicDTO> results});
 }
 
 /// @nodoc
-class _$ItunesResponseDtoCopyWithImpl<$Res, $Val extends ItunesResponseDto>
-    implements $ItunesResponseDtoCopyWith<$Res> {
-  _$ItunesResponseDtoCopyWithImpl(this._value, this._then);
+class _$ItunesMusicResDtoCopyWithImpl<$Res, $Val extends ItunesMusicResDto>
+    implements $ItunesMusicResDtoCopyWith<$Res> {
+  _$ItunesMusicResDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -68,22 +68,22 @@ class _$ItunesResponseDtoCopyWithImpl<$Res, $Val extends ItunesResponseDto>
 }
 
 /// @nodoc
-abstract class _$$ItunesResponseDtoImplCopyWith<$Res>
-    implements $ItunesResponseDtoCopyWith<$Res> {
-  factory _$$ItunesResponseDtoImplCopyWith(_$ItunesResponseDtoImpl value,
-          $Res Function(_$ItunesResponseDtoImpl) then) =
-      __$$ItunesResponseDtoImplCopyWithImpl<$Res>;
+abstract class _$$ItunesMusicResDtoImplCopyWith<$Res>
+    implements $ItunesMusicResDtoCopyWith<$Res> {
+  factory _$$ItunesMusicResDtoImplCopyWith(_$ItunesMusicResDtoImpl value,
+          $Res Function(_$ItunesMusicResDtoImpl) then) =
+      __$$ItunesMusicResDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int resultCount, List<MusicDTO> results});
 }
 
 /// @nodoc
-class __$$ItunesResponseDtoImplCopyWithImpl<$Res>
-    extends _$ItunesResponseDtoCopyWithImpl<$Res, _$ItunesResponseDtoImpl>
-    implements _$$ItunesResponseDtoImplCopyWith<$Res> {
-  __$$ItunesResponseDtoImplCopyWithImpl(_$ItunesResponseDtoImpl _value,
-      $Res Function(_$ItunesResponseDtoImpl) _then)
+class __$$ItunesMusicResDtoImplCopyWithImpl<$Res>
+    extends _$ItunesMusicResDtoCopyWithImpl<$Res, _$ItunesMusicResDtoImpl>
+    implements _$$ItunesMusicResDtoImplCopyWith<$Res> {
+  __$$ItunesMusicResDtoImplCopyWithImpl(_$ItunesMusicResDtoImpl _value,
+      $Res Function(_$ItunesMusicResDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$ItunesResponseDtoImplCopyWithImpl<$Res>
     Object? resultCount = null,
     Object? results = null,
   }) {
-    return _then(_$ItunesResponseDtoImpl(
+    return _then(_$ItunesMusicResDtoImpl(
       resultCount: null == resultCount
           ? _value.resultCount
           : resultCount // ignore: cast_nullable_to_non_nullable
@@ -107,13 +107,13 @@ class __$$ItunesResponseDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ItunesResponseDtoImpl implements _ItunesResponseDto {
-  const _$ItunesResponseDtoImpl(
+class _$ItunesMusicResDtoImpl implements _ItunesMusicResDto {
+  const _$ItunesMusicResDtoImpl(
       {required this.resultCount, required final List<MusicDTO> results})
       : _results = results;
 
-  factory _$ItunesResponseDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ItunesResponseDtoImplFromJson(json);
+  factory _$ItunesMusicResDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ItunesMusicResDtoImplFromJson(json);
 
   @override
   final int resultCount;
@@ -127,14 +127,14 @@ class _$ItunesResponseDtoImpl implements _ItunesResponseDto {
 
   @override
   String toString() {
-    return 'ItunesResponseDto(resultCount: $resultCount, results: $results)';
+    return 'ItunesMusicResDto(resultCount: $resultCount, results: $results)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ItunesResponseDtoImpl &&
+            other is _$ItunesMusicResDtoImpl &&
             (identical(other.resultCount, resultCount) ||
                 other.resultCount == resultCount) &&
             const DeepCollectionEquality().equals(other._results, _results));
@@ -148,25 +148,25 @@ class _$ItunesResponseDtoImpl implements _ItunesResponseDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ItunesResponseDtoImplCopyWith<_$ItunesResponseDtoImpl> get copyWith =>
-      __$$ItunesResponseDtoImplCopyWithImpl<_$ItunesResponseDtoImpl>(
+  _$$ItunesMusicResDtoImplCopyWith<_$ItunesMusicResDtoImpl> get copyWith =>
+      __$$ItunesMusicResDtoImplCopyWithImpl<_$ItunesMusicResDtoImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ItunesResponseDtoImplToJson(
+    return _$$ItunesMusicResDtoImplToJson(
       this,
     );
   }
 }
 
-abstract class _ItunesResponseDto implements ItunesResponseDto {
-  const factory _ItunesResponseDto(
+abstract class _ItunesMusicResDto implements ItunesMusicResDto {
+  const factory _ItunesMusicResDto(
       {required final int resultCount,
-      required final List<MusicDTO> results}) = _$ItunesResponseDtoImpl;
+      required final List<MusicDTO> results}) = _$ItunesMusicResDtoImpl;
 
-  factory _ItunesResponseDto.fromJson(Map<String, dynamic> json) =
-      _$ItunesResponseDtoImpl.fromJson;
+  factory _ItunesMusicResDto.fromJson(Map<String, dynamic> json) =
+      _$ItunesMusicResDtoImpl.fromJson;
 
   @override
   int get resultCount;
@@ -174,6 +174,6 @@ abstract class _ItunesResponseDto implements ItunesResponseDto {
   List<MusicDTO> get results;
   @override
   @JsonKey(ignore: true)
-  _$$ItunesResponseDtoImplCopyWith<_$ItunesResponseDtoImpl> get copyWith =>
+  _$$ItunesMusicResDtoImplCopyWith<_$ItunesMusicResDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
