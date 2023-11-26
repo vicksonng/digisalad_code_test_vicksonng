@@ -1,3 +1,4 @@
+import 'package:digisalad_code_test_vicksonng/features/audio_player/controller/audio_player_controller.dart';
 import 'package:digisalad_code_test_vicksonng/networks/http_client.dart';
 import 'package:digisalad_code_test_vicksonng/respositories/itunes_repository.dart';
 import 'package:get_it/get_it.dart';
@@ -9,4 +10,7 @@ void setUpDI() {
     () => ItunesHttpClient()..init(),
   );
   GetIt.I.registerLazySingleton<ItunesRespository>(ItunesRespository.new);
+  GetIt.I.registerLazySingleton<AudioPlayerController>(
+    () => AudioPlayerController()..init(),
+  );
 }
