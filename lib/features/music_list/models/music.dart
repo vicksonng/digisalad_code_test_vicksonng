@@ -1,21 +1,19 @@
 import 'package:digisalad_code_test_vicksonng/networks/itunes/dtos/music_dto/music_dto.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class Music {
-  final int id;
-  final String? artistName;
-  final String? collectionName;
-  final String? trackName;
-  final String? artworkUrl100;
-  final String previewUrl;
+part 'music.freezed.dart';
 
-  Music({
-    required this.id,
-    this.artistName,
-    this.collectionName,
-    this.trackName,
-    this.artworkUrl100,
-    required this.previewUrl,
-  });
+@freezed
+class Music with _$Music {
+  const factory Music({
+    required int id,
+    required String artistName,
+    required String collectionName,
+    required String trackName,
+    required String previewUrl,
+    String? artworkUrl100,
+    String? artworkUrl30,
+  }) = _Music;
 
   factory Music.fromDto(MusicDTO dto) {
     return Music(
