@@ -18,4 +18,9 @@ class UnifiedPadding {
     horizontal: mdSize,
     vertical: mdSize,
   );
+
+  static const EdgeInsets pagePadding = EdgeInsets.symmetric(
+    horizontal: lgSize,
+    vertical: mdSize,
+  );
 }
