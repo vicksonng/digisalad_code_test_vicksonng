@@ -1,5 +1,5 @@
 import 'package:digisalad_code_test_vicksonng/config/constants.dart';
-import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.dart';
+import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/networks/http_client.dart';
 import 'package:digisalad_code_test_vicksonng/networks/itunes/dtos/itunes_music_res_dto/itunes_music_res_dto.dart';
 import 'package:digisalad_code_test_vicksonng/networks/itunes/service/itunes_service.dart';

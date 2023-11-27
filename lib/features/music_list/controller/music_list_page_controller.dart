@@ -1,7 +1,7 @@
 import 'package:digisalad_code_test_vicksonng/config/constants.dart';
 import 'package:digisalad_code_test_vicksonng/config/messages.dart';
 import 'package:digisalad_code_test_vicksonng/extensions/string_extension.dart';
-import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.dart';
+import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/respositories/itunes_repository.dart';
 import 'package:digisalad_code_test_vicksonng/routes/route_handler.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
@@ -16,14 +16,16 @@ class MusicListPageController extends GetxController {
       PagingController<int, Music>(firstPageKey: 0);
 
   final RxString _keyword = ''.obs;
-  String get keyword => _keyword.value;
-  set keyword(String value) => _keyword.value = value;
 
   @override
   void onClose() {
     pagingController.dispose();
     super.onClose();
   }
+
+  String get keyword => _keyword.value;
+
+  set keyword(String value) => _keyword.value = value;
 
   void searchMusics(String newKeyword) {
     if (newKeyword.isEmpty) {

@@ -3,12 +3,12 @@ import 'package:digisalad_code_test_vicksonng/routes/route_handler.dart';
 import 'package:flutter/material.dart';
 
 class ErrorDialog extends StatelessWidget {
-  final String message;
-
   const ErrorDialog({
     super.key,
     this.message = Messages.errorUnknown,
   });
+
+  final String message;
 
   @override
   Widget build(BuildContext context) {

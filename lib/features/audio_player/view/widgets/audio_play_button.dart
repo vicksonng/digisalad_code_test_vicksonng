@@ -1,5 +1,5 @@
 import 'package:digisalad_code_test_vicksonng/features/audio_player/controller/audio_player_controller.dart';
-import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.dart';
+import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

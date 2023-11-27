@@ -1,6 +1,6 @@
 import 'package:digisalad_code_test_vicksonng/features/audio_player/view/widgets/audio_play_button.dart';
 import 'package:digisalad_code_test_vicksonng/features/music_detail/controller/music_detail_page_controller.dart';
-import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.dart';
+import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/styles/unified_gap.dart';
 import 'package:digisalad_code_test_vicksonng/styles/unified_padding.dart';
 import 'package:digisalad_code_test_vicksonng/styles/unified_size.dart';
@@ -12,31 +12,6 @@ class MusicDetailPage extends GetView<MusicDetailPageController> {
   const MusicDetailPage({super.key});
 
   Music get music => controller.music;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: SafeArea(
-        child: Padding(
-          padding: UnifiedPadding.pagePadding,
-          child: Column(
-            children: [
-              _image(),
-              UnifiedGap.md,
-              _trackName(context),
-              UnifiedGap.md,
-              Expanded(
-                child: _scrollableContent(context),
-              ),
-              UnifiedGap.md,
-              _playButton(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
   Widget _image() {
     return AspectRatio(
@@ -97,6 +72,31 @@ class MusicDetailPage extends GetView<MusicDetailPageController> {
     return AudioPlayButton(
       music: music,
       size: xlSize,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(
+        child: Padding(
+          padding: UnifiedPadding.pagePadding,
+          child: Column(
+            children: [
+              _image(),
+              UnifiedGap.md,
+              _trackName(context),
+              UnifiedGap.md,
+              Expanded(
+                child: _scrollableContent(context),
+              ),
+              UnifiedGap.md,
+              _playButton(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

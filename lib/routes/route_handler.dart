@@ -1,4 +1,4 @@
-import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.dart';
+import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/routes/app_routes.dart';
 import 'package:get/get.dart';
 

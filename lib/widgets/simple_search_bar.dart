@@ -4,12 +4,12 @@ import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
 import 'package:flutter/material.dart';
 
 class SimpleSearchBar extends StatefulWidget {
-  final Function(String value) onSubmitted;
-
   const SimpleSearchBar({
     super.key,
     required this.onSubmitted,
   });
+
+  final Function(String value) onSubmitted;
 
   @override
   State<SimpleSearchBar> createState() => _SimpleSearchBarState();

@@ -1,30 +1,18 @@
 import 'package:digisalad_code_test_vicksonng/features/audio_player/view/widgets/audio_play_button.dart';
-import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.dart';
+import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/styles/unified_size.dart';
 import 'package:digisalad_code_test_vicksonng/widgets/cached_image.dart';
 import 'package:flutter/material.dart';
 
 class MusicCard extends StatelessWidget {
-  final Music music;
-  final VoidCallback onTap;
-
   const MusicCard({
     super.key,
     required this.music,
     required this.onTap,
   });
 
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onTap,
-      style: ListTileStyle.drawer,
-      leading: _leading(),
-      title: _title(),
-      subtitle: _subtitle(),
-      trailing: _trailing(),
-    );
-  }
+  final Music music;
+  final VoidCallback onTap;
 
   Widget _leading() {
     return Hero(
@@ -58,5 +46,17 @@ class MusicCard extends StatelessWidget {
 
   Widget _trailing() {
     return AudioPlayButton(music: music);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: onTap,
+      style: ListTileStyle.drawer,
+      leading: _leading(),
+      title: _title(),
+      subtitle: _subtitle(),
+      trailing: _trailing(),
+    );
   }
 }

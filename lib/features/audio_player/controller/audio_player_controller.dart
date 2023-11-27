@@ -1,4 +1,4 @@
-import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.dart';
+import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
@@ -6,21 +6,23 @@ import 'package:just_audio/just_audio.dart';
 import 'package:logger/logger.dart';
 
 class AudioPlayerController extends GetxController {
-  final Rxn<int> _playingTrackId = Rxn<int>();
-  int? get playingTrackId => _playingTrackId.value;
-  set playingTrackId(int? value) => _playingTrackId.value = value;
-
   final RxBool _isLoading = false.obs;
-  bool get isLoading => _isLoading.value;
-  set isLoading(bool value) => _isLoading.value = value;
-
   final AudioPlayer _player = AudioPlayer();
+  final Rxn<int> _playingTrackId = Rxn<int>();
 
   @override
   void onClose() {
     _player.dispose();
     super.onClose();
   }
+
+  int? get playingTrackId => _playingTrackId.value;
+
+  set playingTrackId(int? value) => _playingTrackId.value = value;
+
+  bool get isLoading => _isLoading.value;
+
+  set isLoading(bool value) => _isLoading.value = value;
 
   void init() {
     _player.playerStateStream.listen((PlayerState state) {

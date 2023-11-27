@@ -11,17 +11,6 @@ class MusicListShimmer extends StatelessWidget {
 
   final int itemCount;
 
-  @override
-  Widget build(BuildContext context) {
-    return ShimmerWrapper(
-      child: Column(
-        children: [
-          for (int i = 0; i < itemCount; i++) _musicListTileShimmer(context),
-        ],
-      ),
-    );
-  }
-
   Widget _musicListTileShimmer(BuildContext context) {
     return ListTile(
       title: Container(
@@ -42,6 +31,17 @@ class MusicListShimmer extends StatelessWidget {
         height: mdSize,
         width: mdSize,
         color: Theme.of(context).splashColor,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ShimmerWrapper(
+      child: Column(
+        children: [
+          for (int i = 0; i < itemCount; i++) _musicListTileShimmer(context),
+        ],
       ),
     );
   }
