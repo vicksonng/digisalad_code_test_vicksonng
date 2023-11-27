@@ -46,6 +46,10 @@ class AudioPlayerController extends GetxController {
   }
 
   void play(Music music) async {
+    if (playingTrackId == music.id) {
+      return;
+    }
+
     try {
       playingTrackId = music.id;
       await _player.setUrl(music.previewUrl);

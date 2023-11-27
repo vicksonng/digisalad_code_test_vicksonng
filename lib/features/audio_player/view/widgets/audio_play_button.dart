@@ -9,9 +9,11 @@ class AudioPlayButton extends StatelessWidget {
   const AudioPlayButton({
     super.key,
     required this.music,
+    this.size,
   });
 
   final Music music;
+  final double? size;
 
   AudioPlayerController get _controller => GetIt.I.get<AudioPlayerController>();
 
@@ -20,18 +22,25 @@ class AudioPlayButton extends StatelessWidget {
     return Obx(() {
       if (_controller.playingTrackId == music.id) {
         if (_controller.isLoading) {
-          return const IconButton(
+          return IconButton(
             onPressed: null,
-            icon: Loading(),
+            iconSize: size,
+            icon: SizedBox(
+              height: size,
+              width: size,
+              child: const Loading(),
+            ),
           );
         }
         return IconButton(
           onPressed: _controller.pause,
+          iconSize: size,
           icon: const Icon(Icons.pause),
         );
       }
       return IconButton(
         onPressed: () => _controller.play(music),
+        iconSize: size,
         icon: const Icon(Icons.play_arrow),
       );
     });
