@@ -24,6 +24,7 @@ dependencies:
   just_audio: ^0.9.36
   logger: ^2.0.2+1
   retrofit: ^4.0.3
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_lints: ^3.0.1
