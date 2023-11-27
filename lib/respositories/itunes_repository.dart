@@ -5,7 +5,7 @@ import 'package:digisalad_code_test_vicksonng/networks/itunes/dtos/itunes_music_
 import 'package:digisalad_code_test_vicksonng/networks/itunes/service/itunes_service.dart';
 import 'package:get_it/get_it.dart';
 
-class ItunesRespository {
+class ItunesRepository {
   final ITunesService _itunesService = ITunesService(
     GetIt.I<ItunesHttpClient>().instance,
   );
