@@ -21,8 +21,9 @@ class Music with _$Music {
       artistName: dto.artistName,
       collectionName: dto.collectionName,
       trackName: dto.trackName,
-      artworkUrl100: dto.artworkUrl100,
       previewUrl: dto.previewUrl,
+      artworkUrl100: dto.artworkUrl100,
+      artworkUrl30: dto.artworkUrl30,
     );
   }
 }
