@@ -1,14 +1,18 @@
 import 'package:digisalad_code_test_vicksonng/features/audio_player/controller/audio_player_controller.dart';
-import 'package:digisalad_code_test_vicksonng/injections.dart';
+import 'package:digisalad_code_test_vicksonng/di/injections.dart';
 import 'package:digisalad_code_test_vicksonng/routes/app_pages.dart';
 import 'package:digisalad_code_test_vicksonng/routes/app_routes.dart';
 import 'package:digisalad_code_test_vicksonng/styles/unified_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   setUpDI();
   runApp(const MyApp());
 }
