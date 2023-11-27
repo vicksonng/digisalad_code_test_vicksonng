@@ -1,6 +1,6 @@
 import 'package:digisalad_code_test_vicksonng/config/messages.dart';
+import 'package:digisalad_code_test_vicksonng/routes/route_handler.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ErrorDialog extends StatelessWidget {
   final String message;
@@ -15,10 +15,10 @@ class ErrorDialog extends StatelessWidget {
     return AlertDialog(
       title: const Text(Messages.error),
       content: Text(message),
-      actions: [
+      actions: const [
         TextButton(
-          onPressed: Get.back,
-          child: const Text(Messages.ok),
+          onPressed: navigateBack,
+          child: Text(Messages.ok),
         ),
       ],
     );
