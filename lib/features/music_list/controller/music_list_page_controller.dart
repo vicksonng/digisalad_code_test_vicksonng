@@ -46,7 +46,12 @@ class MusicListPageController extends GetxController {
       if (_newMusics.length < searchLimit) {
         pagingController.appendLastPage(_newMusics);
       } else {
-        pagingController.appendPage(_newMusics, nextPageKey + 1);
+        // FIXME: This is a workaround to prevent duplicate items from being added to the list. (Vickson NG - 2023-11-28)
+        final List<Music> _distinctMusics = _newMusics
+            .where((Music music) =>
+                !(pagingController.itemList ?? []).contains(music))
+            .toList();
+        pagingController.appendPage(_distinctMusics, nextPageKey + 1);
       }
     } catch (e) {
       pagingController.error = e;
