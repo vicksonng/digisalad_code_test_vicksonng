@@ -18,6 +18,7 @@ class AppPages {
           name: AppRoutes.musicDetail,
           page: MusicDetailPage.new,
           binding: MusicDetailPageBinding(),
+          fullscreenDialog: true,
         ),
       ],
     ),

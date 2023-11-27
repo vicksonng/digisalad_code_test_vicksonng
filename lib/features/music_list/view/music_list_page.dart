@@ -52,27 +52,27 @@ class MusicListPage extends GetView<MusicListPageController> {
   }
 
   Widget _welcome() {
-          return const Center(
-            child: Text(Messages.welcome),
-          );
-        }
+    return const Center(
+      child: Text(Messages.welcome),
+    );
+  }
 
   Widget _paginatedMusicList() {
-        return PagedListView<int, Music>(
-          pagingController: controller.pagingController,
-          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          builderDelegate: PagedChildBuilderDelegate<Music>(
+    return PagedListView<int, Music>(
+      pagingController: controller.pagingController,
+      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+      builderDelegate: PagedChildBuilderDelegate<Music>(
         itemBuilder: (BuildContext context, Music music, _) => MusicCard(
           music: music,
-              onTap: () {},
-            ),
-            newPageProgressIndicatorBuilder: (_) => const Center(
-              child: Loading(),
-            ),
+          onTap: () => controller.navigateToMusicDetail(music),
+        ),
+        newPageProgressIndicatorBuilder: (_) => const Center(
+          child: Loading(),
+        ),
         firstPageProgressIndicatorBuilder: (_) {
           return const MusicListShimmer();
         },
-          ),
+      ),
     );
   }
 }

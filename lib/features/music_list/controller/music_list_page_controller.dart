@@ -3,8 +3,9 @@ import 'package:digisalad_code_test_vicksonng/config/messages.dart';
 import 'package:digisalad_code_test_vicksonng/extensions/string_extension.dart';
 import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.dart';
 import 'package:digisalad_code_test_vicksonng/respositories/itunes_repository.dart';
+import 'package:digisalad_code_test_vicksonng/routes/route_handler.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -56,5 +57,9 @@ class MusicListPageController extends GetxController {
     } catch (e) {
       pagingController.error = e;
     }
+  }
+
+  void navigateToMusicDetail(Music music) {
+    navigateToMusicDetailPage(music);
   }
 }
