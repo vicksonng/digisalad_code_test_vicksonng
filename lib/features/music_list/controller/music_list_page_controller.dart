@@ -5,11 +5,11 @@ import 'package:digisalad_code_test_vicksonng/features/music_list/models/music.d
 import 'package:digisalad_code_test_vicksonng/respositories/itunes_repository.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
 import 'package:get/state_manager.dart';
+import 'package:get_it/get_it.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 class MusicListPageController extends GetxController {
-  final ItunesRespository musicRepository;
-  MusicListPageController({required this.musicRepository});
+  MusicListPageController();
 
   final PagingController<int, Music> pagingController =
       PagingController<int, Music>(firstPageKey: 0);
@@ -38,10 +38,11 @@ class MusicListPageController extends GetxController {
 
   Future<void> searchMusicNewPage(String keyword, int nextPageKey) async {
     try {
-      final List<Music> _newMusics = await musicRepository.searchMusic(
-        term: keyword.parseItuneSearchTerm,
-        offset: nextPageKey * searchLimit,
-      );
+      final List<Music> _newMusics =
+          await GetIt.I.get<ItunesRepository>().searchMusic(
+                term: keyword.parseItuneSearchTerm,
+                offset: nextPageKey * searchLimit,
+              );
       if (_newMusics.length < searchLimit) {
         pagingController.appendLastPage(_newMusics);
       } else {

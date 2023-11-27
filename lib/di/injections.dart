@@ -9,7 +9,7 @@ void setUpDI() {
   GetIt.I.registerLazySingleton<ItunesHttpClient>(
     () => ItunesHttpClient()..init(),
   );
-  GetIt.I.registerLazySingleton<ItunesRespository>(ItunesRespository.new);
+  GetIt.I.registerLazySingleton<ItunesRepository>(ItunesRepository.new);
   GetIt.I.registerLazySingleton<AudioPlayerController>(
     () => AudioPlayerController()..init(),
   );
