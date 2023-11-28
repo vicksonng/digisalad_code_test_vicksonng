@@ -1,0 +1,22 @@
+{
+  "appName": "iTunes音樂搜尋",
+  "lang": {
+    "en": "Eng",
+    "zh": "繁中"
+  },
+  "error": {
+    "title": "錯誤",
+    "cannotBeEmpty": "搜尋詞不能為空，請重試",
+    "noItemsFound": "找不到任何項目",
+    "unknown": "發生了一些問題"
+  },
+  "action": {
+    "ok": "確定"
+  },
+  "view": {
+    "musicList": {
+      "searchBarPlaceHolder": "搜尋音樂",
+      "welcome": "歡迎"
+    }
+  }
+}

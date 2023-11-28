@@ -1,0 +1,22 @@
+{
+  "appName": "iTunes Music Search",
+  "lang": {
+    "en": "Eng",
+    "zh": "繁中"
+  },
+  "error": {
+    "title": "Error",
+    "cannotBeEmpty": "search term and try again",
+    "noItemsFound": "No items found",
+    "unknown": "Something went wrong"
+  },
+  "action": {
+    "ok": "OK"
+  },
+  "view": {
+    "musicList": {
+      "searchBarPlaceHolder": "Search for music",
+      "welcome": "Welcome"
+    }
+  }
+}
