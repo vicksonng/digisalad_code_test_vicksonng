@@ -1,11 +1,11 @@
 import 'package:digisalad_code_test_vicksonng/config/constants.dart';
-import 'package:digisalad_code_test_vicksonng/config/messages.dart';
 import 'package:digisalad_code_test_vicksonng/extensions/string_extension.dart';
 import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/respositories/itunes_repository.dart';
 import 'package:digisalad_code_test_vicksonng/routes/route_handler.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
-import 'package:get/get.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:get/state_manager.dart';
 import 'package:get_it/get_it.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -29,7 +29,7 @@ class MusicListPageController extends GetxController {
 
   void searchMusics(String newKeyword) {
     if (newKeyword.isEmpty) {
-      showErrorDialog(Messages.errorCannotBeEmpty);
+      showErrorDialog('error.cannotBeEmpty'.tr());
       return;
     }
     keyword = newKeyword;

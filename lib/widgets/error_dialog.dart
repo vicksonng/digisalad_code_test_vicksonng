@@ -1,24 +1,26 @@
-import 'package:digisalad_code_test_vicksonng/config/messages.dart';
 import 'package:digisalad_code_test_vicksonng/routes/route_handler.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ErrorDialog extends StatelessWidget {
   const ErrorDialog({
     super.key,
-    this.message = Messages.errorUnknown,
+    this.message,
   });
 
-  final String message;
+  final String? message;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text(Messages.error),
-      content: Text(message),
-      actions: const [
+      title: const Text('error.title').tr(),
+      content: Text(
+        message ?? 'error.unknown'.tr(),
+      ),
+      actions: [
         TextButton(
           onPressed: navigateBack,
-          child: Text(Messages.ok),
+          child: const Text('action.ok').tr(),
         ),
       ],
     );

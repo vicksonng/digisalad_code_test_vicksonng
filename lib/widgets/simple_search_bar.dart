@@ -1,4 +1,3 @@
-import 'package:digisalad_code_test_vicksonng/config/messages.dart';
 import 'package:digisalad_code_test_vicksonng/styles/unified_padding.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +6,11 @@ class SimpleSearchBar extends StatefulWidget {
   const SimpleSearchBar({
     super.key,
     required this.onSubmitted,
+    this.placeholder,
   });
 
   final Function(String value) onSubmitted;
+  final String? placeholder;
 
   @override
   State<SimpleSearchBar> createState() => _SimpleSearchBarState();
@@ -31,7 +32,7 @@ class _SimpleSearchBarState extends State<SimpleSearchBar> {
       padding: const MaterialStatePropertyAll<EdgeInsets>(
         UnifiedPadding.horizontalMd,
       ),
-      hintText: Messages.searchBarPlaceHolder,
+      hintText: widget.placeholder,
       onSubmitted: widget.onSubmitted,
       trailing: [
         IconButton(

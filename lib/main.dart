@@ -1,8 +1,10 @@
+import 'package:digisalad_code_test_vicksonng/config/locates.dart';
 import 'package:digisalad_code_test_vicksonng/features/audio_player/controller/audio_player_controller.dart';
 import 'package:digisalad_code_test_vicksonng/di/injections.dart';
 import 'package:digisalad_code_test_vicksonng/routes/app_pages.dart';
 import 'package:digisalad_code_test_vicksonng/routes/app_routes.dart';
 import 'package:digisalad_code_test_vicksonng/styles/unified_color.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -13,8 +15,17 @@ void main() async {
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+  await EasyLocalization.ensureInitialized();
   setUpDI();
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: SupportedLocales.locales,
+      path: 'assets/translations',
+      fallbackLocale: SupportedLocales.en,
+      useOnlyLangCode: true,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -58,6 +69,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ),
       ),
       initialRoute: AppRoutes.root,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
     );
   }
 }
