@@ -2,6 +2,8 @@ import 'package:digisalad_code_test_vicksonng/styles/unified_size.dart';
 import 'package:gap/gap.dart';
 
 class UnifiedGap {
+  const UnifiedGap._();
+
   static Gap get xs => const Gap(xsSize);
 
   static Gap get sm => const Gap(smSize);
