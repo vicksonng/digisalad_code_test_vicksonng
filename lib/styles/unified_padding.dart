@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 class UnifiedPadding {
   const UnifiedPadding._();
 
-  static const EdgeInsets allMd = EdgeInsets.symmetric(
-    horizontal: mdSize,
-    vertical: mdSize,
-  );
+  static const EdgeInsets allMd = EdgeInsets.all(mdSize);
+
+  static const EdgeInsets allLg = EdgeInsets.all(lgSize);
 
   static const EdgeInsets horizontalLg = EdgeInsets.symmetric(
     horizontal: lgSize,
