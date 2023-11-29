@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         title ?? 'appName'.tr(),
         overflow: TextOverflow.ellipsis,
-      ).tr(),
+      ),
       titleSpacing: mdSize,
       centerTitle: false,
       actions: actions != null
