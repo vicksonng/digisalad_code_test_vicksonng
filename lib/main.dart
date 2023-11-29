@@ -16,7 +16,7 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
   await EasyLocalization.ensureInitialized();
-  setUpDI();
+  await setUpDI();
   runApp(
     EasyLocalization(
       supportedLocales: SupportedLocales.locales,

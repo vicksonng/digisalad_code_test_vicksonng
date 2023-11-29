@@ -16,12 +16,19 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Music {
+  @HiveField(0)
   int get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get artistName => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get collectionName => throw _privateConstructorUsedError;
+  @HiveField(3)
   String get trackName => throw _privateConstructorUsedError;
+  @HiveField(4)
   String get previewUrl => throw _privateConstructorUsedError;
+  @HiveField(5)
   String? get artworkUrl100 => throw _privateConstructorUsedError;
+  @HiveField(6)
   String? get artworkUrl30 => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,13 +41,13 @@ abstract class $MusicCopyWith<$Res> {
       _$MusicCopyWithImpl<$Res, Music>;
   @useResult
   $Res call(
-      {int id,
-      String artistName,
-      String collectionName,
-      String trackName,
-      String previewUrl,
-      String? artworkUrl100,
-      String? artworkUrl30});
+      {@HiveField(0) int id,
+      @HiveField(1) String artistName,
+      @HiveField(2) String collectionName,
+      @HiveField(3) String trackName,
+      @HiveField(4) String previewUrl,
+      @HiveField(5) String? artworkUrl100,
+      @HiveField(6) String? artworkUrl30});
 }
 
 /// @nodoc
@@ -105,13 +112,13 @@ abstract class _$$MusicImplCopyWith<$Res> implements $MusicCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String artistName,
-      String collectionName,
-      String trackName,
-      String previewUrl,
-      String? artworkUrl100,
-      String? artworkUrl30});
+      {@HiveField(0) int id,
+      @HiveField(1) String artistName,
+      @HiveField(2) String collectionName,
+      @HiveField(3) String trackName,
+      @HiveField(4) String previewUrl,
+      @HiveField(5) String? artworkUrl100,
+      @HiveField(6) String? artworkUrl30});
 }
 
 /// @nodoc
@@ -168,29 +175,38 @@ class __$$MusicImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MusicImpl implements _Music {
-  const _$MusicImpl(
-      {required this.id,
-      required this.artistName,
-      required this.collectionName,
-      required this.trackName,
-      required this.previewUrl,
-      this.artworkUrl100,
-      this.artworkUrl30});
+@HiveType(typeId: 0)
+class _$MusicImpl extends _Music {
+  _$MusicImpl(
+      {@HiveField(0) required this.id,
+      @HiveField(1) required this.artistName,
+      @HiveField(2) required this.collectionName,
+      @HiveField(3) required this.trackName,
+      @HiveField(4) required this.previewUrl,
+      @HiveField(5) this.artworkUrl100,
+      @HiveField(6) this.artworkUrl30})
+      : super._();
 
   @override
+  @HiveField(0)
   final int id;
   @override
+  @HiveField(1)
   final String artistName;
   @override
+  @HiveField(2)
   final String collectionName;
   @override
+  @HiveField(3)
   final String trackName;
   @override
+  @HiveField(4)
   final String previewUrl;
   @override
+  @HiveField(5)
   final String? artworkUrl100;
   @override
+  @HiveField(6)
   final String? artworkUrl30;
 
   @override
@@ -229,29 +245,37 @@ class _$MusicImpl implements _Music {
       __$$MusicImplCopyWithImpl<_$MusicImpl>(this, _$identity);
 }
 
-abstract class _Music implements Music {
-  const factory _Music(
-      {required final int id,
-      required final String artistName,
-      required final String collectionName,
-      required final String trackName,
-      required final String previewUrl,
-      final String? artworkUrl100,
-      final String? artworkUrl30}) = _$MusicImpl;
+abstract class _Music extends Music {
+  factory _Music(
+      {@HiveField(0) required final int id,
+      @HiveField(1) required final String artistName,
+      @HiveField(2) required final String collectionName,
+      @HiveField(3) required final String trackName,
+      @HiveField(4) required final String previewUrl,
+      @HiveField(5) final String? artworkUrl100,
+      @HiveField(6) final String? artworkUrl30}) = _$MusicImpl;
+  _Music._() : super._();
 
   @override
+  @HiveField(0)
   int get id;
   @override
+  @HiveField(1)
   String get artistName;
   @override
+  @HiveField(2)
   String get collectionName;
   @override
+  @HiveField(3)
   String get trackName;
   @override
+  @HiveField(4)
   String get previewUrl;
   @override
+  @HiveField(5)
   String? get artworkUrl100;
   @override
+  @HiveField(6)
   String? get artworkUrl30;
   @override
   @JsonKey(ignore: true)
