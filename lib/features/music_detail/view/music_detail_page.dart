@@ -75,10 +75,30 @@ class MusicDetailPage extends GetView<MusicDetailPageController> {
     );
   }
 
+  AppBar _appBar() {
+    return AppBar(
+      actions: [
+        IconButton(
+          onPressed: () {
+            controller.clickFavorite();
+          },
+          icon: Obx(
+            () {
+              return Icon(
+                controller.isFavorite ? Icons.favorite : Icons.favorite_border,
+              );
+            },
+          ),
+        ),
+        UnifiedGap.md,
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: _appBar(),
       body: SafeArea(
         child: Padding(
           padding: UnifiedPadding.pagePadding,

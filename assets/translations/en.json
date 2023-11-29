@@ -16,7 +16,10 @@
   "view": {
     "musicList": {
       "searchBarPlaceHolder": "Search for music",
-      "welcome": "Welcome"
+      "welcome": "Welcome!",
+      "instruction": "Please enter a search term to continue",
+      "emptyList": "No items found",
+      "addedFavoriteNumber": "Added to favorite: {}"
     }
   }
 }

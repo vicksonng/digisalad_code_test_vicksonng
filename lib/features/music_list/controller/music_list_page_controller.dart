@@ -3,8 +3,10 @@ import 'package:digisalad_code_test_vicksonng/extensions/string_extension.dart';
 import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/respositories/itunes_repository.dart';
 import 'package:digisalad_code_test_vicksonng/routes/route_handler.dart';
+import 'package:digisalad_code_test_vicksonng/services/hive_service.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:get_it/get_it.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
@@ -12,16 +14,38 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 class MusicListPageController extends GetxController {
   MusicListPageController();
 
+  final List<Tab> tabs = <Tab>[
+    const Tab(
+      icon: Icon(Icons.music_note_rounded),
+    ),
+    const Tab(
+      icon: Icon(Icons.favorite_rounded),
+    ),
+  ];
+
   final PagingController<int, Music> pagingController =
       PagingController<int, Music>(firstPageKey: 0);
 
   final RxString _keyword = ''.obs;
+  final RxList<Music> _favoriteSongs = <Music>[].obs;
+
+  @override
+  void onReady() async {
+    super.onReady();
+    favoriteSongs = await GetIt.I.get<HiveService>().getAllMusics();
+    GetIt.I<HiveService>().musicListenable.addListener(() async {
+      favoriteSongs = await GetIt.I.get<HiveService>().getAllMusics();
+    });
+  }
 
   @override
   void onClose() {
     pagingController.dispose();
     super.onClose();
   }
+
+  List<Music> get favoriteSongs => _favoriteSongs;
+  set favoriteSongs(List<Music> value) => _favoriteSongs.value = value;
 
   String get keyword => _keyword.value;
 
@@ -63,5 +87,9 @@ class MusicListPageController extends GetxController {
 
   void navigateToMusicDetail(Music music) {
     navigateToMusicDetailPage(music);
+  }
+
+  Future<void> clearFavoriteSongs() async {
+    await GetIt.I.get<HiveService>().deleteAllMusics();
   }
 }

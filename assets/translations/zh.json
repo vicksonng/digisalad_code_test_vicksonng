@@ -16,7 +16,10 @@
   "view": {
     "musicList": {
       "searchBarPlaceHolder": "搜尋音樂",
-      "welcome": "歡迎"
+      "welcome": "歡迎!",
+      "instruction": "請輸入搜尋詞，然後按下搜尋按鈕",
+      "emptyList": "沒有任何項目",
+      "addedFavoriteNumber": "已加入我的最愛: {}"
     }
   }
 }
