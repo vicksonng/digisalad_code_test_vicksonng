@@ -2,6 +2,7 @@ import 'package:digisalad_code_test_vicksonng/features/music_list/controller/mus
 import 'package:digisalad_code_test_vicksonng/features/music_list/models/music/music.dart';
 import 'package:digisalad_code_test_vicksonng/features/music_list/view/widgets/music_card.dart';
 import 'package:digisalad_code_test_vicksonng/features/music_list/view/widgets/music_list_shimmer.dart';
+import 'package:digisalad_code_test_vicksonng/features/music_list/view/widgets/retry_search_error.dart';
 import 'package:digisalad_code_test_vicksonng/features/music_list/view/widgets/search_music_view/welcome_message.dart';
 import 'package:digisalad_code_test_vicksonng/styles/unified_padding.dart';
 import 'package:digisalad_code_test_vicksonng/utils/common_utils.dart';
@@ -30,30 +31,51 @@ class SearchMusicView extends StatelessWidget {
     );
   }
 
+  Widget _paddingWrapper({required Widget child}) {
+    return Padding(
+      padding: UnifiedPadding.verticalMd,
+      child: child,
+    );
+  }
+
   Widget _paginatedMusicList() {
     return PagedListView<int, Music>(
       pagingController: controller.pagingController,
       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       builderDelegate: PagedChildBuilderDelegate<Music>(
-          itemBuilder: (BuildContext context, Music music, _) => MusicCard(
-                music: music,
-                onTap: () => controller.navigateToMusicDetail(music),
-              ),
-          newPageProgressIndicatorBuilder: (_) => const Center(
-                child: Loading(),
-              ),
-          firstPageProgressIndicatorBuilder: (_) {
-            return const MusicListShimmer();
-          },
-          noItemsFoundIndicatorBuilder: (_) {
-            return Padding(
-              padding: UnifiedPadding.verticalMd,
-              child: IconMessage(
-                iconData: Icons.error_outline_rounded,
-                message: 'error.noItemsFound'.tr(),
-              ),
-            );
-          }),
+        itemBuilder: (BuildContext context, Music music, _) => MusicCard(
+          music: music,
+          onTap: () => controller.navigateToMusicDetail(music),
+        ),
+        newPageProgressIndicatorBuilder: (_) => const Center(
+          child: Loading(),
+        ),
+        firstPageProgressIndicatorBuilder: (_) {
+          return const MusicListShimmer();
+        },
+        firstPageErrorIndicatorBuilder: (_) {
+          return _paddingWrapper(
+            child: RetrySearchError(
+              onRetry: controller.retrySearch,
+            ),
+          );
+        },
+        newPageErrorIndicatorBuilder: (_) {
+          return _paddingWrapper(
+            child: RetrySearchError(
+              onRetry: controller.retrySearch,
+            ),
+          );
+        },
+        noItemsFoundIndicatorBuilder: (_) {
+          return _paddingWrapper(
+            child: IconMessage(
+              iconData: Icons.error_outline_rounded,
+              message: 'error.noItemsFound'.tr(),
+            ),
+          );
+        },
+      ),
     );
   }
 
@@ -71,9 +93,8 @@ class SearchMusicView extends StatelessWidget {
             child: Obx(
               () {
                 if (controller.keyword.isEmpty) {
-                  return const Padding(
-                    padding: UnifiedPadding.allLg,
-                    child: WelcomeMessage(),
+                  return _paddingWrapper(
+                    child: const WelcomeMessage(),
                   );
                 }
                 return _paginatedMusicList();

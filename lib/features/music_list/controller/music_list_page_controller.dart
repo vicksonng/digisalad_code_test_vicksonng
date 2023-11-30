@@ -85,6 +85,10 @@ class MusicListPageController extends GetxController {
     }
   }
 
+  void retrySearch() {
+    pagingController.retryLastFailedRequest();
+  }
+
   void navigateToMusicDetail(Music music) {
     navigateToMusicDetailPage(music);
   }
