@@ -1,16 +1,43 @@
-# digisalad_code_test_vicksonng
+# DigiSalad Code Test - Vickson NG
 
-A new Flutter project.
+This is an Flutter app that let user to search music in iTunes Music. The search results shall be displayed in a ListView and the user can play the preview track
+
+## Key Features
+
+- Search Music with **iTunes Search API** with **Pagination**
+- Play & Pause the **preview** track
+- Support **ZH** & **EN**
+- Save your favorite tracks
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Supported Platform:
 
-A few resources to get you started if this is your first Flutter project:
+- IOS
+- Android
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### System Requirements
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Item    | Version  |
+| ------- | -------- |
+| Dart    | >=3.2.0  |
+| Flutter | >=3.16.0 |
+
+### Run the project
+
+```bash
+flutter pub get
+
+flutter run --debug
+or
+flutter run --release
+```
+
+### For more information
+
+- Description of features
+- Coding Style
+- System Design
+- Folder Structure
+- ...
+  https://hackmd.io/@FzketY_CSU-U59sTohpDrQ/r17CuAlHT
