@@ -17,13 +17,7 @@ class SimpleSearchBar extends StatefulWidget {
 }
 
 class _SimpleSearchBarState extends State<SimpleSearchBar> {
-  late TextEditingController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = TextEditingController();
-  }
+  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
